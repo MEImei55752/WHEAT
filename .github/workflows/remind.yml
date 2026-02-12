@@ -1,0 +1,22 @@
+name: 企业微信每日14:00提醒
+on:
+  schedule:
+    # 北京时间 14:00
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  send_msg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 发送提醒
+        run: |
+          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d5e13a20-bf3a-4c98-b894-3257e2e627a9' \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "msgtype": "text",
+              "text": {
+                "content": "DX1H内饰仍处于保密阶段，请各位领导停车后注意伪装覆盖，另在人群密集区域请勿打开后背箱以防偷拍，祝大家马年大吉，谢谢。",
+                "mentioned_list": ["@all"]
+              }
+            }'
