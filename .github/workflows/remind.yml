@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: 发送提醒
         run: |
-          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d5e13a20-bf3a-4c98-b894-3257e2e627a9' \
+          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=https://qyapi.weixin.qq.com/cggi-bin/webhook/send?key=d5e13a20-bf3a-4c98-b894-3257e2e627a9' \
             -H 'Content-Type: application/json' \
             -d '{
               "msgtype": "text",
